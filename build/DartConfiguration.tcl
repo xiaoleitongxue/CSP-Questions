@@ -4,31 +4,30 @@
 
 
 # Configuration directories and files
-SourceDirectory: C:/Users/Joshua/code/cmakeQuickStart
-BuildDirectory: C:/Users/Joshua/code/cmakeQuickStart/build
+SourceDirectory: /Users/lilei/Documents/GitHub/CSP-Questions
+BuildDirectory: /Users/lilei/Documents/GitHub/CSP-Questions/build
 
 # Where to place the cost data store
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: DESKTOP-NNMT42T
+Site: lileideMacBook-Air.local
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
-BuildName: Win32-mingw32-make
+BuildName: Darwin-clang++
 
 # Subprojects
 LabelsForSubprojects: 
 
 # Submission information
 SubmitURL: http://
-SubmitInactivityTimeout: 
 
 # Dashboard start time
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "C:/Program Files/CMake/bin/cmake.exe" "C:/Users/Joshua/code/cmakeQuickStart"
-MakeCommand: C:/Program\ Files/CMake/bin/cmake.exe --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
+ConfigureCommand: "/opt/homebrew/Cellar/cmake/3.22.1/bin/cmake" "/Users/lilei/Documents/GitHub/CSP-Questions"
+MakeCommand: /opt/homebrew/Cellar/cmake/3.22.1/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
 DefaultCTestConfigurationType: Release
 
 # version control
@@ -45,7 +44,7 @@ SVNOptions:
 SVNUpdateOptions: 
 
 # Git options
-GITCommand: 
+GITCommand: /opt/homebrew/bin/git
 GITInitSubmodules: 
 GITUpdateOptions: 
 GITUpdateCustom: 
@@ -58,13 +57,13 @@ P4UpdateOptions:
 P4UpdateCustom: 
 
 # Generic update command
-UpdateCommand: 
+UpdateCommand: /opt/homebrew/bin/git
 UpdateOptions: 
-UpdateType: 
+UpdateType: git
 
 # Compiler info
-Compiler: C:/MinGW/bin/g++.exe
-CompilerVersion: 6.3.0
+Compiler: /usr/bin/clang++
+CompilerVersion: 13.0.0.13000029
 
 # Dynamic analysis (MemCheck)
 PurifyCommand: 
@@ -81,7 +80,7 @@ MemoryCheckCommandOptions:
 MemoryCheckSuppressionFile: 
 
 # Coverage
-CoverageCommand: C:/MinGW/bin/gcov.exe
+CoverageCommand: /usr/bin/gcov
 CoverageExtraFlags: -l
 
 # Testing options

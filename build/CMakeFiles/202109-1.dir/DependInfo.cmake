@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/Joshua/code/cmakeQuickStart/202109-1.cpp" "CMakeFiles/202109-1.dir/202109-1.cpp.obj" "gcc" "CMakeFiles/202109-1.dir/202109-1.cpp.obj.d"
+  "/Users/lilei/Documents/GitHub/CSP-Questions/202109-1.cpp" "CMakeFiles/202109-1.dir/202109-1.cpp.o" "gcc" "CMakeFiles/202109-1.dir/202109-1.cpp.o.d"
   )
 
 # Targets to which this target links.

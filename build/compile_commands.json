@@ -1,22 +1,22 @@
 [
 {
-  "directory": "C:/Users/Joshua/code/cmakeQuickStart/build",
-  "command": "C:\\MinGW\\bin\\g++.exe   -g -o CMakeFiles\\main.dir\\main.cpp.obj -c C:\\Users\\Joshua\\code\\cmakeQuickStart\\main.cpp",
-  "file": "C:/Users/Joshua/code/cmakeQuickStart/main.cpp"
+  "directory": "/Users/lilei/Documents/GitHub/CSP-Questions/build",
+  "command": "/usr/bin/clang++   -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -o CMakeFiles/main.dir/main.cpp.o -c /Users/lilei/Documents/GitHub/CSP-Questions/main.cpp",
+  "file": "/Users/lilei/Documents/GitHub/CSP-Questions/main.cpp"
 },
 {
-  "directory": "C:/Users/Joshua/code/cmakeQuickStart/build",
-  "command": "C:\\MinGW\\bin\\g++.exe   -g -o CMakeFiles\\202104-1.dir\\202104-1.cpp.obj -c C:\\Users\\Joshua\\code\\cmakeQuickStart\\202104-1.cpp",
-  "file": "C:/Users/Joshua/code/cmakeQuickStart/202104-1.cpp"
+  "directory": "/Users/lilei/Documents/GitHub/CSP-Questions/build",
+  "command": "/usr/bin/clang++   -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -o CMakeFiles/202104-1.dir/202104-1.cpp.o -c /Users/lilei/Documents/GitHub/CSP-Questions/202104-1.cpp",
+  "file": "/Users/lilei/Documents/GitHub/CSP-Questions/202104-1.cpp"
 },
 {
-  "directory": "C:/Users/Joshua/code/cmakeQuickStart/build",
-  "command": "C:\\MinGW\\bin\\g++.exe   -g -o CMakeFiles\\202109-1.dir\\202109-1.cpp.obj -c C:\\Users\\Joshua\\code\\cmakeQuickStart\\202109-1.cpp",
-  "file": "C:/Users/Joshua/code/cmakeQuickStart/202109-1.cpp"
+  "directory": "/Users/lilei/Documents/GitHub/CSP-Questions/build",
+  "command": "/usr/bin/clang++   -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -o CMakeFiles/202109-1.dir/202109-1.cpp.o -c /Users/lilei/Documents/GitHub/CSP-Questions/202109-1.cpp",
+  "file": "/Users/lilei/Documents/GitHub/CSP-Questions/202109-1.cpp"
 },
 {
-  "directory": "C:/Users/Joshua/code/cmakeQuickStart/build",
-  "command": "C:\\MinGW\\bin\\g++.exe   -g -o CMakeFiles\\202112-1.dir\\202112-1.cpp.obj -c C:\\Users\\Joshua\\code\\cmakeQuickStart\\202112-1.cpp",
-  "file": "C:/Users/Joshua/code/cmakeQuickStart/202112-1.cpp"
+  "directory": "/Users/lilei/Documents/GitHub/CSP-Questions/build",
+  "command": "/usr/bin/clang++   -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -o CMakeFiles/202112-1.dir/202112-1.cpp.o -c /Users/lilei/Documents/GitHub/CSP-Questions/202112-1.cpp",
+  "file": "/Users/lilei/Documents/GitHub/CSP-Questions/202112-1.cpp"
 }
 ]
