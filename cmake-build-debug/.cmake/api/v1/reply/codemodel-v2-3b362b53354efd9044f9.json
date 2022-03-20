@@ -1,0 +1,159 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "CSP-Solutions",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "201812-1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-201812-1-Debug-6881fef3fdcccad0cf95.json",
+					"name" : "201812-1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "201903-1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-201903-1-Debug-b232877bf264e1df2272.json",
+					"name" : "201903-1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "201909-1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-201909-1-Debug-f236f048976004439c04.json",
+					"name" : "201909-1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "201912-1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-201912-1-Debug-33cdeab3a228d4f189a0.json",
+					"name" : "201912-1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "202006-1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-202006-1-Debug-20eb08fbc35cab8d2f45.json",
+					"name" : "202006-1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "202009-1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-202009-1-Debug-576b9f5eefed34c250b3.json",
+					"name" : "202009-1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "202012-1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-202012-1-Debug-e452d889c126fc78e5c8.json",
+					"name" : "202012-1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "202104-1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-202104-1-Debug-0e48c57b67e5cba2c46e.json",
+					"name" : "202104-1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "202109-1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-202109-1-Debug-b0fbc64abc152a6549a9.json",
+					"name" : "202109-1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "202112-1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-202112-1-Debug-ad679a4e0e3f406e8c76.json",
+					"name" : "202112-1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "main::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-main-Debug-28a2224586be3a019de3.json",
+					"name" : "main",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test-Debug-f33eaa86f0c95f2cfe71.json",
+					"name" : "test",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/lilei/Documents/GitHub/CSP-Questions/cmake-build-debug",
+		"source" : "/Users/lilei/Documents/GitHub/CSP-Questions"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
