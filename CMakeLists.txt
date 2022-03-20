@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.21)
+project(CSP-Solutions)
+
+set(CMAKE_CXX_STANDARD 14)
+
+add_executable(main main.cpp)
+add_executable(test test.cpp)
+add_executable(201812-1 201812-1.cpp)
+add_executable(201903-1 201903-1.cpp)
+add_executable(201909-1 201909-1.cpp)
+add_executable(201912-1 201912-1.cpp)
+add_executable(202006-1 202006-1.cpp)
+add_executable(202009-1 202009-1.cpp)
+add_executable(202012-1 202012-1.cpp)
+add_executable(202104-1 202104-1.cpp)
+add_executable(202109-1 202109-1.cpp)
+add_executable(202112-1 202112-1.cpp)

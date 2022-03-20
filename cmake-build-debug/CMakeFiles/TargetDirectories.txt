@@ -1,0 +1,14 @@
+C:/Users/Joshua/CLionProjects/CSP-Solutions/cmake-build-debug/CMakeFiles/201912-1.dir
+C:/Users/Joshua/CLionProjects/CSP-Solutions/cmake-build-debug/CMakeFiles/201909-1.dir
+C:/Users/Joshua/CLionProjects/CSP-Solutions/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Joshua/CLionProjects/CSP-Solutions/cmake-build-debug/CMakeFiles/main.dir
+C:/Users/Joshua/CLionProjects/CSP-Solutions/cmake-build-debug/CMakeFiles/test.dir
+C:/Users/Joshua/CLionProjects/CSP-Solutions/cmake-build-debug/CMakeFiles/201812-1.dir
+C:/Users/Joshua/CLionProjects/CSP-Solutions/cmake-build-debug/CMakeFiles/201903-1.dir
+C:/Users/Joshua/CLionProjects/CSP-Solutions/cmake-build-debug/CMakeFiles/202006-1.dir
+C:/Users/Joshua/CLionProjects/CSP-Solutions/cmake-build-debug/CMakeFiles/202009-1.dir
+C:/Users/Joshua/CLionProjects/CSP-Solutions/cmake-build-debug/CMakeFiles/202012-1.dir
+C:/Users/Joshua/CLionProjects/CSP-Solutions/cmake-build-debug/CMakeFiles/202104-1.dir
+C:/Users/Joshua/CLionProjects/CSP-Solutions/cmake-build-debug/CMakeFiles/202109-1.dir
+C:/Users/Joshua/CLionProjects/CSP-Solutions/cmake-build-debug/CMakeFiles/202112-1.dir
+C:/Users/Joshua/CLionProjects/CSP-Solutions/cmake-build-debug/CMakeFiles/rebuild_cache.dir
