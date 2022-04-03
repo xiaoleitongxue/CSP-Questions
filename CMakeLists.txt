@@ -16,4 +16,12 @@ add_executable(202104-1 202104-1.cpp)
 add_executable(202109-1 202109-1.cpp)
 add_executable(202112-1 202112-1.cpp)
 add_executable(201809-1 201809-1.cpp)
+<<<<<<< Updated upstream
 add_executable(201803-1 201803-1.cpp)
+=======
+add_executable(201803-1 201803-1.cpp)
+add_executable(201712-1 201712-1.cpp)
+add_executable(202112-2 202112-2.cpp)
+add_executable(202109-2 202109-2.cpp)
+add_executable(inputting_test inputting_test.cpp)
+>>>>>>> Stashed changes
