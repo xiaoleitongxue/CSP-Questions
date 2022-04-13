@@ -22,4 +22,4 @@ add_executable(202112-2 202112-2.cpp)
 add_executable(202109-2 202109-2.cpp)
 add_executable(inputting_test inputting_test.cpp)
 add_executable(202203-1 202203-1.cpp)
-
+add_executable(202203-2 202203-2.cpp)
