@@ -1,37 +1,47 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
 #include <iomanip>
 using namespace std;
-int main(int, char **)
+int main()
 {
-    int n;
-    cin >> n;
-    vector<float> a(n, 0);
-    for (int i = 0; i < n; ++i)
+    long n;cin>>n;
+    int a[n+1];
+    for(long i=1;i<=n;i++)
     {
-        cin >> a[i];
+        cin>>a[i];
     }
-    sort(a.begin(), a.end());
-    float mid;
-    if (a.size() % 2 == 0)
+    double mid=0;
+    long min=0,max=0;
+    long temp=0;//用来保存mid的值；
+    if(n%2==0)
     {
-        mid = (a[a.size() / 2 - 1] + a[a.size() / 2]) / 2;
+        mid=(a[n/2]+a[(n/2)+1])/2.0;//小细节：除数必须用2.0，如果用2则转换为整型
+        temp=(a[n/2]+a[(n/2)+1])/2;
     }
     else
     {
-        mid = a[a.size() / 2];
+        mid=a[n/2+1];
+        temp=a[n/2+1];
     }
-    cout << int(a[a.size() - 1]) << ' ';
-    if(mid == float(int(mid))){
-        cout << int(mid);
-    }else{
-        if(mid > 0.0){
-            mid = mid + 0.5;
-        }else{
-            mid = mid - 0.5;
-        }
-        cout << fixed << setprecision(1) << mid;
+    if(a[1]<a[n])
+    {
+        max=a[n];
+        min=a[1];
     }
-    cout << ' ' << int(a[0]) << endl;
+    else
+    {
+        max=a[1];
+        min=a[n];
+    }
+    cout<<max<<" ";
+    if(mid-temp>0)
+    {
+        cout<<fixed<<setprecision(1)<<mid<<" ";//采用控制小数位数
+    }
+    else
+    {
+        cout<<temp<<" ";
+    }
+    cout<<min<<endl;
+    return 0;
 }
+
