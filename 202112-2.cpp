@@ -8,37 +8,42 @@
 
 using namespace std;
 int main(int, char**){
-    int n, N;
+    int n;
+    int N;
     cin >> n >> N;
-    int nums[n+1] = {0};
-    for(int i = 1; i < n + 1; ++i){
+    int nums[n + 1] = {0};
+    for(int i = 1; i < n + 1; i++){
         cin >> nums[i];
     }
-    int f[N] ={0};
-    int g[N] = {0};
-    int err[N] = {0};
-    int i = 0;
-    int j = 0;
-    while(i < N){
-        cout << i << ' ' << j << endl;
-        if(j < n + 1){
-            if(i < nums[j]){
-                f[i] = j - 1 >= 0 ? j - 1 : 0;
-                i++;
-            }else if(i == nums[j]){
-                j++;
-            }else{
-                j++;
-            }
-        }else{
-            f[i++] = n;
-        }
-    }
-    cout << "here" << endl;
-    int r = N/(n+1);
-    int sum = 0;
+    long long sum = 0;
+    int r = N / (n + 1);
     for(int i = 0; i < N; ++i){
-        err[i] = abs(i / r - f[i]);
+        int gi = i / r;
+        int fi;
+        int j = gi;
+        if( j > n){
+            j = n;
+        }
+        if(i == nums[j]){
+            fi = j;
+        }else if(i < nums[j]){
+            while(j >= 0 && i < nums[j]){
+                j--;
+            }
+            fi = j;
+        }else{
+             while(j < n + 1 && i > nums[j]){
+                 j++;
+             }
+             if(nums[j] == i){
+                 fi = j;
+             }else{
+                 fi = j - 1;
+             }
+        }
+        cout << gi << endl;
+        sum = abs(gi - fi) + sum;
     }
-    cout << sum;
+    cout << sum << endl;
+    return 0;
 }
