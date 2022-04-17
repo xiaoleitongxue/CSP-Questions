@@ -1,49 +1,39 @@
 //
 // Created by lilei on 2022/3/25.
 //
-// score 70
+// score 100
 #include <iostream>
-#include <vector>
 #include <numeric>
 
 using namespace std;
 int main(int, char**){
-    int n;
-    int N;
+    int n, N;
     cin >> n >> N;
-    int nums[n + 1] = {0};
-    for(int i = 1; i < n + 1; i++){
+    int nums[100002] = {0};
+    nums[n+1] = N;
+    for(int i = 1; i <= n; ++i){
         cin >> nums[i];
     }
+    int r = N /(n+1);
     long long sum = 0;
-    int r = N / (n + 1);
-    for(int i = 0; i < N; ++i){
-        int gi = i / r;
-        int fi;
-        int j = gi;
-        if( j > n){
-            j = n;
-        }
-        if(i == nums[j]){
-            fi = j;
-        }else if(i < nums[j]){
-            while(j >= 0 && i < nums[j]){
-                j--;
+    for(int i = 1; i <= n + 1; ++i){
+        int cur_fx = i - 1;
+        int step = 0;
+        for(int j = nums[i - 1]; j <= nums[i] - 1; j = j + step){
+            int gx = j / r;
+            int gx_group_inner_index = j % r;
+            int remains = r - gx_group_inner_index - 1;
+            int end = 0;
+            if(j + remains >= nums[i] - 1){
+                end = nums[i] - 1;
+                step = end - j + 1;
+            }else{
+                end = j + remains;
+                step = remains + 1;
             }
-            fi = j;
-        }else{
-             while(j < n + 1 && i > nums[j]){
-                 j++;
-             }
-             if(nums[j] == i){
-                 fi = j;
-             }else{
-                 fi = j - 1;
-             }
+            sum += abs(gx - cur_fx)*(end - j + 1);
         }
-        cout << gi << endl;
-        sum = abs(gi - fi) + sum;
     }
+
     cout << sum << endl;
-    return 0;
 }
