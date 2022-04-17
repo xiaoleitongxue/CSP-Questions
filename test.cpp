@@ -1,33 +1,26 @@
+// C++ program to demonstrate the use of std::unique
 #include <iostream>
-#include <cmath> //绝对值函数abs()头文件
+#include <vector>
+#include <algorithm>
 using namespace std;
+int main()
+{
+    vector<int> v = { 1, 1, 3, 3, 3, 10, 1, 3, 3, 7, 7, 8 }, i;
 
-int main(){
-	int n, N;
-    long long sum = 0;
-    cin >> n >> N;
-    int A[n+2] = {0};
-    A[n + 1] = N;
-    for(int i =1; i <= n; ++i){
-        cin >> A[i];
+    vector<int>::iterator ip;
+
+    // Using std::unique
+    ip = std::unique(v.begin(), v.begin() + 12);
+    // Now v becomes {1 3 10 1 3 7 8 * * * * *}
+    // * means undefined
+    // Resizing the vector so as to remove the undefined terms
+    v.resize(std::distance(v.begin(), ip));
+
+    // Displaying the vector after applying std::unique
+    for (ip = v.begin(); ip != v.end(); ++ip) {
+        cout << *ip << " ";
     }
-    int r = N /( n + 1);
-    for(int i = 1; i <= n + 1; ++i){
-        int step = 0;
-        for(int j = A[i-1]; j <= A[i] - 1; j = j + step){
-            int gx = j / r;
-            int gx_zu_inner_index = j % r;
-            int remains = r - gx_zu_inner_index - 1;
-            int end;
-            if( j + remains >= A[i] - 1){
-                end = A[i] - 1;
-            }else{
-                end  = j + remains;
-            }
-            step = end - j + 1;
-            sum += abs(gx - (i - 1)) * (end - j + 1);
-        }
-    }
-    cout << sum;
+
     return 0;
 }
+

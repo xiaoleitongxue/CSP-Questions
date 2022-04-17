@@ -6,7 +6,7 @@ int main(int, char**) {
     int N, M;
     cin >> N >> M;
     int apple_counts[N] = { 0 };
-    vector<vector<int>> delete_apples(N, vector<int>(2, 0));
+    vector< vector<int> > delete_apples(N, vector<int>(2, 0));
     int delete_apple;
     int apple_sum = 0;
     for(int i = 0; i < N; ++i){
