@@ -1,6 +1,6 @@
 //
 // Created by lilei on 2022/3/25.
-//
+// 序列查询新解
 // score 100
 #include <iostream>
 #include <numeric>
