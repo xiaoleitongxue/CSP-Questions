@@ -5,4 +5,5 @@ int main(int, char **)
     std::cout << "Hello, world!\n";
     n = 2;
     std::cout << n << std::endl;
+
 }
