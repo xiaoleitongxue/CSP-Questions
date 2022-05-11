@@ -1,3 +1,17 @@
+/**
+ * 正确	100	156ms
+ **/
+
+/**
+ * @file 202203-3-revised-1.cpp
+ * @author your name (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2022-05-11
+ * 
+ * @copyright Copyright (c) 2022
+ * 解题总结：这种题的特点是题目特别长，要仔细梳理题目的意思，理清条件，设出恰当的变量，结构体等
+ */
 #include <iostream>
 #include <map>
 #include <queue>
@@ -7,8 +21,8 @@ struct Node{
     int id;
     int cnt;
     int from;
-    int node_seq;
     map<int, bool> book_applications;
+    //运算符重载，希望node从小到大排列
     bool operator<(const Node &a) const
     {
         if (cnt != a.cnt)
@@ -57,7 +71,7 @@ priority_queue<Node> chose(int a, int na, int pa, int paa){
     }else{
         c2 = c1;
     }
-    //过滤节点非亲和性
+    //过滤节点亲和性
     vector<Node> c3;
     if(paa){
         for(int i = 0; i < c2.size(); ++i){
@@ -81,8 +95,15 @@ int ans(int tf, priority_queue<Node> &final, int a, int paa){
         Node node = final.top();
         final.pop();
         cout << node.id << ' ';
-        partitions[node.from][node.node_seq].cnt++;
-        partitions[node.from][node.node_seq].book_applications[a] = true;
+        //find node index in vector
+        int index = 0;
+        for(index; index < partitions[node.from].size(); ++index){
+            if(partitions[node.from][index].id == node.id){
+                break;
+            }
+        }
+        partitions[node.from][index].cnt++;
+        partitions[node.from][index].book_applications[a] = true;
         //如果反亲和不是自己，则该计算结点还可以再容纳应用a的其他任务。
         if(a != paa){
             node.cnt++;
@@ -96,25 +117,18 @@ int ans(int tf, priority_queue<Node> &final, int a, int paa){
 
 int main(){
     cin >> n >> m;
-    int pre_node_from = -1;
-    int node_seq = -1;
+    //在输入数据时，题目并没有保证结点所在区是按非递减顺序依次输入的
+    //这个坑卡了我很久
     for(int i = 0; i < n; ++i){
         int node_from;
         cin >> node_from;
         Node node;
         node.id = i + 1;
-        if(node_from != pre_node_from){
-            node_seq = 0;
-        }else{
-            node_seq++;
-        }
-        pre_node_from = node_from;
         node.from = node_from;
-        node.node_seq = node_seq;
         partitions[node_from].push_back(node);
     }
     cin >> g;
-    int nums[1006][6] ={0};
+    int nums[2000][6] ={0};
     for(int i = 0; i < g; ++i){
         int f, a, na, pa, paa, paar;
         cin >> f >> a >> na >> pa >> paa >> paar;
