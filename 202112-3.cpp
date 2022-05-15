@@ -11,6 +11,80 @@ struct item{
     int dishu;
     int exp;
 };
+
+
+vector<int> calc_gx(int k){
+    vector<int> gx(k + 1, 0);
+    gx[0] = -3;
+    gx[1] = 1;
+    // 之后还有K - 1项需要计算
+    for(int i = 2; i <= k; i++){
+        vector<int> temp;
+        temp.assign(gx.begin(), gx.end());
+        gx[0] = 0;
+        for(int j = 1; j <= k; j++){
+            gx[j] = temp[j - 1];
+        }
+        for(int j = 1; j <= k; j++){
+            temp[j] *= -pow(3, i);
+            gx[j] += temp[j];
+        }
+    }
+    return gx;
+}
+
+vector<int> calc_dx(vector<int> words){
+    vector<int> dx;
+    for(int i = words.size() - 1; i >= 0; --i){
+        dx.push_back(words[i]);
+    }
+    return dx;
+}
+
+vector<int> calc_rx(int k, vector<int> words){
+    vector<int> gx = calc_gx(k);
+    vector<int> dx = calc_dx(words);
+    //dx % gx = rx
+    cout << "gx and dx has calc" << endl;
+    //x^k*d(x)
+    vector<int> kdx(dx.size() + k, 0);
+    for(int i = 0; i < dx.size(); ++i){
+        kdx[i + k] = dx[i];
+    }
+    //
+    // calc kdx % gx
+    int kdx_len = kdx.size();
+    int gx_len = gx.size();
+    while(kdx_len >= gx_len){
+        int xishu = kdx[kdx_len - 1] / gx[gx_len - 1];
+        int i_dx = gx_len - 1;
+        for(int i = kdx_len - 1; i >= kdx_len - gx_len; --i){
+            kdx[i] -= (gx[i_dx--]) * xishu;
+        }
+        kdx_len--;
+    }
+    for(int i = 0; i < kdx.size(); i++){
+        cout << kdx[i] << ' ';
+    }
+    cout << endl;
+    vector<int> rx;
+    int i = gx_len - 2;
+    while(kdx[i] == 0){
+        i--;
+    }
+    for(; i >= 0; --i){
+        kdx[i] = (-kdx[i]);
+        if (kdx[i] < 0)
+            kdx[i] += 929;
+        rx.push_back(kdx[i]);
+    }
+    for(int i = 0; i < rx.size(); i++){
+        cout << rx[i] << ' ';
+    }
+    cout << endl;
+    return rx;
+}
+
 int main(){
     cin >> w >> s;
     cin >> str;
@@ -65,11 +139,16 @@ int main(){
     for(int i = 0; i < codes.size(); i = i + 2){
         words.push_back(30*codes[i] + codes[i + 1]);
     }
-    int k = pow(2, s + 1);
+    int k;
+    if(s == -1){
+        k = 0;
+    }else{
+        k = pow(2, s + 1);
+    }
     int data_counts = words.size() - 1;
     int tianchong_counts = 0;
     int cur = 1 + data_counts + k;
-    while(cur % 4 != 0){
+    while(cur % w != 0){
         cur++;
     }
     cout << cur << endl;
@@ -83,8 +162,17 @@ int main(){
     for(int i = 0; i < words.size(); i++){
         cout << words[i] << ' ';
     }
-    vector<item> gx;
-    for(int i = 0; i < k; ++i){
-
+    cout << endl;
+    vector<int> rx = calc_rx(k, words);
+    vector<int> jx;
+    for(int i = 0; i < rx.size(); ++i){
+        jx.push_back(rx[i] % 929);
     }
+    for(int i = jx.size() - 1; i >= 0; --i){
+        words.push_back(jx[i]);
+    }
+    for(int i = 0; i < words.size(); ++i){
+        cout << words[i] << endl;
+    }
+    return 0;
 }
