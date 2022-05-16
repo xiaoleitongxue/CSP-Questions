@@ -20,6 +20,8 @@ int main()
     for (ip = v.begin(); ip != v.end(); ++ip) {
         cout << *ip << " ";
     }
+    //(b + (a%b)) % b
+    cout << (-32902164 % 929 + 929) % 929 << endl;
 
     return 0;
 }
