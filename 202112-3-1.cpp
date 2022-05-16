@@ -53,9 +53,11 @@ int main() {
     for (long long i = 0; i < v.size(); i += 2) {
         v2.push_back(v[i] * 30 + v[i + 1]);
     }
-    // fill
+    // + 1 because there is a words's length
     long long len = v2.size() + 1;
+    // in this case, we needn't calculate validation code
     if (s == -1) {
+        //fill
         while (len % w) {
             v2.push_back(900);
             ++len;
@@ -64,24 +66,29 @@ int main() {
         for (auto x: v2)cout << x << endl;
         return 0;
     }
+    //fill
     while ((len + (1 << (s + 1))) % w) {
         ++len;
         v2.push_back(900);
     }
     // computing validation code
     vector<long long> v3;
+    //len = length + data + fill
     v3.push_back(len);
+    // push data from v2 to v3
     for (auto X: v2) {
         v3.push_back(X);
     }
+    //printf length, data and fill
     for (auto x: v3)printf("%d\n", x);
+
     //calculate gx
     vector<long long> v4;
     v4.push_back(1);
     v4.push_back(-3);
 
     long long mul = -3;
-
+    //1 << (s + 1) == 2^(s+1)
     for (long long i = 2; i <= (1 << (s + 1)); i++) {
         v4.push_back(0);
         mul = mul * 3 % 929;
@@ -89,6 +96,7 @@ int main() {
     }
     long long w4 = 1 << (s + 1);
     for (long long i = 1; i <= w4; i++) v3.push_back(0);
+    //calculate rx
     for (long long i = 0; i < v3.size(); i++) {
         long long num = v3[i];
         for (long long j = i + 1; j <= i + w4; j++)v3[j] -= num * v4[j - i] % 929, v3[j] %= 929;
@@ -97,6 +105,7 @@ int main() {
             break;
         }
     }
+    // calculate validation code
     while (f < v3.size()) {
         long long ans1 = (-v3[f]) % 929;
         if (ans1 < 0)ans1 += 929;
