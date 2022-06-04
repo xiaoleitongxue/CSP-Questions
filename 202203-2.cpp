@@ -13,7 +13,9 @@ int main()
     for(int i = 0; i < n; ++i){
         cin >> t >> c;
         if(k <= t){
+            //做核酸的最早时间
             int l_bound = max(t - c - k + 1, 0);
+            //做核酸的最晚时间
             int r_bound = t - k + 1;
             q_left[l_bound]++;
             q_right[r_bound]++;

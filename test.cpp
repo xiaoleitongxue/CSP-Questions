@@ -22,7 +22,8 @@ int main()
     }
     //(b + (a%b)) % b
     cout << (-32902164 % 929 + 929) % 929 << endl;
-
+    cout << -1 % 3 + 3 << endl;
+    cout << -5 % 2 + 2 << endl;
     return 0;
 }
 

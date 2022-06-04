@@ -1,39 +1,41 @@
 //
 // Created by lilei on 2022/3/25.
 // 序列查询新解
-// score 100
+//score 100 109ms
+//特别注意数据类型要用long long
 #include <iostream>
 #include <numeric>
 
 using namespace std;
 int main(int, char**){
-    int n, N;
-    cin >> n >> N;
-    int nums[100002] = {0};
-    nums[n+1] = N;
-    for(int i = 1; i <= n; ++i){
-        cin >> nums[i];
-    }
-    int r = N /(n+1);
-    long long sum = 0;
-    for(int i = 1; i <= n + 1; ++i){
-        int cur_fx = i - 1;
-        int step = 0;
-        for(int j = nums[i - 1]; j <= nums[i] - 1; j = j + step){
-            int gx = j / r;
-            int gx_group_inner_index = j % r;
-            int remains = r - gx_group_inner_index - 1;
-            int end = 0;
-            if(j + remains >= nums[i] - 1){
-                end = nums[i] - 1;
-                step = end - j + 1;
-            }else{
-                end = j + remains;
-                step = remains + 1;
-            }
-            sum += abs(gx - cur_fx)*(end - j + 1);
-        }
-    }
-
-    cout << sum << endl;
+   int n, N;
+   int A[100005] = {0};
+   cin >> n >> N;
+   for(int i = 1; i <=n; ++i){
+       cin >> A[i];
+   }
+   A[n + 1] = N;
+   int r = N / (n + 1);
+   int x = 0;
+   long long sum = 0;
+   for(int i = 1; i <=(n + 1); ++i){
+       int length = A[i] - A[i-1];
+       int gx = x / r;
+       int zu_nei_index = x % r;
+       int temp_sum = 0;
+       int cur_match_length = min(r - zu_nei_index, length);
+       for(int j = -1; j < length;){
+           if(cur_match_length > 0){
+                temp_sum += abs(cur_match_length * gx - cur_match_length * (i - 1));
+                gx++;
+                j+= cur_match_length;
+                cur_match_length = min(r, length - j - 1);
+           }else{
+               break;
+           }
+       }
+       sum += temp_sum;
+       x += length;
+   }
+   printf("%lld\n", sum);
 }
